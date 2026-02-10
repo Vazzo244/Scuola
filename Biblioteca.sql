@@ -16,3 +16,13 @@ CREATE TABLE Utenti (
     data_iscrizione DATE DEFAULT CURRENT_DATE
 );
 
+CREATE TABLE Prestiti (
+    id_prestito INT PRIMARY KEY AUTO_INCREMENT,
+    id_utente INT,
+    id_libro INT,
+    data_inizio DATE NOT NULL,
+    data_scadenza DATE NOT NULL,
+    data_restituzione DATE,
+    FOREIGN KEY (id_utente) REFERENCES Utenti(id_utente),
+    FOREIGN KEY (id_libro) REFERENCES Libri(id_libro)
+);
