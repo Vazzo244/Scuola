@@ -6,3 +6,13 @@ CREATE TABLE Libri (
     genere VARCHAR(50),
     anno_pubblicazione YEAR,
 );
+
+CREATE TABLE Utenti (
+    id_utente INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    cognome VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    telefono VARCHAR(20),
+    data_iscrizione DATE DEFAULT CURRENT_DATE
+);
+
