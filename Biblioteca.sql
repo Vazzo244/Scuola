@@ -26,3 +26,12 @@ CREATE TABLE Prestiti (
     FOREIGN KEY (id_utente) REFERENCES Utenti(id_utente),
     FOREIGN KEY (id_libro) REFERENCES Libri(id_libro)
 );
+
+CREATE TABLE Login (
+    id_login INT PRIMARY KEY AUTO_INCREMENT,
+    id_utente INT UNIQUE,               
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,      
+    ruolo VARCHAR(20) DEFAULT 'utente',  
+    FOREIGN KEY (id_utente) REFERENCES Utenti(id_utente) ON DELETE CASCADE
+);
